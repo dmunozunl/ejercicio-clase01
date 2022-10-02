@@ -1,1 +1,31 @@
 
+<html>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+
+        <h5>Solución</h5>
+        <div class="mermaid">
+          classDiagram
+            direction LR
+            class Equipo{
+              +String nombre
+              +String tipo_deporte
+              +String siglas
+            }
+            class Jugador{
+              +String nombre
+              +String apellido
+            }            
+            class Sancion{
+              +String observacion
+              +Double multa
+            }
+            Equipo "1" o-- "0..n" Jugador : jugadores
+            Jugador "1" o-- "0..n" Sancion : sanciones
+
+        </div>
+    </body>
+</html>
